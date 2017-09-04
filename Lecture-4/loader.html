@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loader</title>
+    <style>
+        .loader {
+            width: 100px;
+            height:100px;
+            background-color: red;
+            display: block;
+            margin: 0 auto;
+            transform: translateY(100%);
+            animation-name: shape;
+            animation-iteration-count: infinite;
+            animation-duration: 4s;
+        }
+
+        @keyframes shape {
+          0% {
+              border-radius: 0 0 0 0;
+              transform: rotate(0deg) ;
+          }
+          25% {
+              border-radius: 0 50% 0 0;
+              transform: rotate(90deg);
+              background-color: green;
+          }
+          50% {
+             border-radius: 50% 50% 0 0;
+              transform: rotate(120deg);
+              background-color: rebeccapurple;
+          }
+          75% {
+              border-radius: 50% 50% 50% 0;
+              transform: rotate(150deg);
+              background-color: aquamarine;
+          }
+            100% {
+                border-radius: 50%;
+                transform: rotate(180deg);
+                background-color: chartreuse;
+            }
+        }
+    </style>
+</head>
+<body>
+ <div class="loader">
+
+ </div>
+</body>
+</html>

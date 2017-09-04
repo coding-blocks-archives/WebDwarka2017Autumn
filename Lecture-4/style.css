@@ -1,0 +1,17 @@
+.parent {
+    display: flex;
+}
+
+.inline {
+    width: 49%;
+    background-color: beige;
+    font-size: 20px;
+}
+
+.inline-occupation {
+    width: 49%;
+    text-align: right;
+    background-color: beige;
+    font-size: 20px;
+    font-style: italic;
+}

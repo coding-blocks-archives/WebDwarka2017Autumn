@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Absolute</title>
+    <style>
+        .parent {
+            position: relative;
+        }
+        .main {
+            width: 500px;
+            height: 500px;
+            padding: 80px;
+            font-size: 28px;
+            border: 1px solid black;
+            margin: 29px;
+        }
+
+        .overlay {
+            width: 500px;
+            height: 500px;
+            padding: 80px;
+            margin: 29px;
+            top: -29px;
+            position: absolute;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .overlay:hover {
+            background-color: rgba(0, 0, 0, 0.35);
+
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="main">
+        Hello World
+    </div>
+    <div class="overlay">
+
+    </div>
+</div>
+
+</body>
+</html>

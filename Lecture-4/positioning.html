@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Positioning</title>
+    <style>
+
+        .parent {
+            display: block;
+            position: relative;
+            width: 49%;
+            top:80px;
+        }
+        .child1, .child2 {
+            position:relative;
+            border: 1px solid rebeccapurple;
+        }
+
+        .child1 {
+            top: 10px;
+        }
+        .child2 {
+            top: 10px;
+            /*left: 40px*/
+        }
+    </style>
+</head>
+<body>
+<!-- Position Relative -->
+
+<div class="parent">
+    <div class="child1">
+      Child 1
+    </div>
+    <div class="child2">
+      Child 2
+    </div>
+</div>
+</body>
+</html>
