@@ -1,11 +1,16 @@
 /**
  * Created by aayusharora on 9/24/17.
  */
-var taskArray = [];
+var taskArray = JSON.parse(localStorage.getItem('data')) || [];
 window.onload = function() {
+
+
+
     var taskValue = document.getElementById('task');
     var btn = document.getElementById('add');
     var list = document.getElementById('list');
+
+    display();
 
     btn.onclick = function() {
         var task = {
@@ -14,7 +19,9 @@ window.onload = function() {
         };
 
         taskArray.push(task);
+        localStorage.setItem('data', JSON.stringify(taskArray));
         display();
+
     };
 
     function display() {
@@ -34,8 +41,17 @@ window.onload = function() {
 };
 
 function check(el) {
-    console.log(el.id);
-    el.style.textDecoration = 'line-through';
-    taskArray[el.id].done = true;
+
+    if(taskArray[el.id].done === true) {
+        el.style.textDecoration = 'none';
+    }
+    else {
+        el.style.textDecoration = 'line-through';
+    }
+
+
+
+    taskArray[el.id].done = !taskArray[el.id].done;
+    localStorage.setItem('data', JSON.stringify(taskArray));
     console.log(taskArray);
 }
