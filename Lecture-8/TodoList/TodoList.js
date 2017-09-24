@@ -21,7 +21,13 @@ window.onload = function() {
         var data ="";
         list.innerHTML = "";
         for(var i=0 ; i< taskArray.length; i++) {
-            data += '<li id='+ i + ' onclick= "check(this)">' + taskArray[i].taskValue + '</li>';
+            if(taskArray[i].done === true)  {
+                data += '<li id='+ i + ' onclick= "check(this)" style="text-decoration: line-through;">' + taskArray[i].taskValue + '</li>';
+            }
+            else {
+                data += '<li id='+ i + ' onclick= "check(this)">' + taskArray[i].taskValue + '</li>';
+            }
+
         }
         list.innerHTML = data;
     }
@@ -30,5 +36,6 @@ window.onload = function() {
 function check(el) {
     console.log(el.id);
     el.style.textDecoration = 'line-through';
-
+    taskArray[el.id].done = true;
+    console.log(taskArray);
 }
