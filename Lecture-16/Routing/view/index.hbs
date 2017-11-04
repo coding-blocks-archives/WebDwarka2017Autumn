@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+
+</head>
+<body>
+{{#each key as |item|}}
+     Item: {{item.item}}
+     <br>
+
+     {{#if item.price}}
+         Price: {{item.price}}
+     {{/if}}
+ {{/each}}
+
+</body>
+
+</html>
