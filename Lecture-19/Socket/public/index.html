@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp">
+<button id="btn">Send</button>
+<ul id="result"></ul>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    var socket = io();
+    window.onload = function() {
+        let value = document.getElementById('inp');
+        let btn = document.getElementById('btn');
+        let result = document.getElementById('result');
+
+        btn.onclick = function() {
+            let inputValue = value.value;
+            socket.emit('msg', inputValue);
+        };
+
+        socket.on('all', function(data) {
+            console.log(data);
+        });
+        socket.on('everybody', function(data) {
+             let message = "";
+            data.forEach((msg) => {
+                message += `<li>${msg.data}${msg.id}</li><br>`;
+            });
+            result.innerHTML = message;
+        })
+    }
+
+</script>
+
+</body>
+</html>
